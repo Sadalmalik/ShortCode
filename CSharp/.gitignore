@@ -1,0 +1,33 @@
+# Have no idea :D if this correct
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+[Bb]in/
+[Oo]bj/
+
+# Rider
+**/.idea/**/*.iml
+**/.idea/**/contentModel.xml
+**/.idea/modules.xml
+.idea/workspace.xml
+.idea/tasks.xml
+
+# Visual Studio
+*.suo
+*.user
+.vs/
+*.VC.db # VC++ cache files
+
+# Packages
+[Pp]ackages/
+# Exclude NuGet package cache when located in project dir
+*.nuget.props
+*.nuget.targets
+
+# Misc
+Thumbs.db
+Desktop.ini
+.DS_Store
