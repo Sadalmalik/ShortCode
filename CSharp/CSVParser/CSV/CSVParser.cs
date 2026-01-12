@@ -1,11 +1,20 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Text;
+﻿using System.Text;
 
 namespace Sadalmalik.CSV
 {
     public static class CSVParser
     {
-        public static IEnumerable<List<string>> ReadLinesFromString([NotNull] string csv, Encoding? encoding = null)
+        public static List<List<string>> ReadTable(string csv, Encoding? encoding = null)
+        {
+            return ReadLinesFromString(csv, encoding).ToList();
+        }
+
+        public static string WriteTable(List<List<string>> table, Encoding? encoding = null)
+        {
+            return WriteLinesToString(table, encoding);
+        }
+
+        public static IEnumerable<List<string>> ReadLinesFromString(string csv, Encoding? encoding = null)
         {
             return ReadFromString(csv, encoding).ToLines();
         }
@@ -15,29 +24,31 @@ namespace Sadalmalik.CSV
             return WriteToString(lines.ToValues(), encoding);
         }
 
-        public static IEnumerable<string?> ReadFromString([NotNull] string csv, Encoding? encoding = null)
+        public static IEnumerable<string?> ReadFromString(string csv, Encoding? encoding = null)
         {
-            var bytes = (encoding ?? Encoding.UTF8).GetBytes(csv);
+            encoding ??= Encoding.UTF8;
+            var bytes = encoding.GetBytes(csv);
             var stream = new MemoryStream(bytes);
-            var reader = new StreamReader(stream);
-            return Read(reader, reader, stream);
+            var reader = new StreamReader(stream, encoding);
+            return Read(reader, stream, reader);
         }
 
         public static string WriteToString(IEnumerable<string?> values, Encoding? encoding = null)
         {
+            encoding ??= Encoding.UTF8;
             using var stream = new MemoryStream();
-            using var writer = new StreamWriter(stream);
+            using var writer = new StreamWriter(stream, encoding);
             Write(writer, values);
             writer.Flush();
             stream.Seek(0, SeekOrigin.Begin);
-            using var reader = new StreamReader(stream, encoding ?? Encoding.UTF8);
+            using var reader = new StreamReader(stream, encoding);
             return reader.ReadToEnd();
         }
 
         public static IEnumerable<string?> Read(StreamReader reader, params IDisposable[] disposables)
         {
             var quotedString = false;
-            var accumulator = new StringBuilder();
+            var buffer = new StringBuilder();
 
             while (!reader.EndOfStream)
             {
@@ -61,18 +72,18 @@ namespace Sadalmalik.CSV
                 {
                     if (curr == '\r' || curr == '\n')
                     {
-                        yield return accumulator.ToString();
-                        accumulator.Clear();
-                        if (next == '\n')
-                            reader.Read();
+                        yield return buffer.ToString();
+                        buffer.Clear();
                         yield return null;
+                        if (curr == '\r' && next == '\n')
+                            reader.Read();
                         continue;
                     }
 
                     if (curr == ',')
                     {
-                        yield return accumulator.ToString();
-                        accumulator.Clear();
+                        yield return buffer.ToString();
+                        buffer.Clear();
                         continue;
                     }
 
@@ -83,11 +94,11 @@ namespace Sadalmalik.CSV
                     }
                 }
 
-                accumulator.Append(curr);
+                buffer.Append(curr);
             }
 
-            yield return accumulator.ToString();
-            accumulator.Clear();
+            yield return buffer.ToString();
+            buffer.Clear();
             yield return null;
 
             foreach (var disposable in disposables)
@@ -97,9 +108,9 @@ namespace Sadalmalik.CSV
         public static void Write(StreamWriter writer, IEnumerable<string?> values)
         {
             var needSeparator = false;
-            foreach (var entry in values)
+            foreach (var value in values)
             {
-                if (entry == null)
+                if (value == null)
                 {
                     writer.WriteLine();
                     needSeparator = false;
@@ -110,18 +121,18 @@ namespace Sadalmalik.CSV
                     writer.Write(',');
                 needSeparator = true;
 
-                if (entry.Contains('"') ||
-                    entry.Contains(',') ||
-                    entry.Contains('\n') ||
-                    entry.Contains('\r'))
+                if (value.Contains('"') ||
+                    value.Contains(',') ||
+                    value.Contains('\n') ||
+                    value.Contains('\r'))
                 {
                     writer.Write('"');
-                    writer.Write(entry.Replace("\"", "\"\""));
+                    writer.Write(value.Replace("\"", "\"\""));
                     writer.Write('"');
                     continue;
                 }
 
-                writer.Write(entry);
+                writer.Write(value);
             }
         }
     }

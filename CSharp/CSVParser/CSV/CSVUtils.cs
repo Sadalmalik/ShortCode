@@ -2,17 +2,17 @@
 
 namespace Sadalmalik.CSV
 {
-    public static class CSVUtils
+    public class CSVUtils
     {
-        private static BindingFlags flags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance;
+        public static BindingFlags flags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance;
 
-        private static readonly string[] TrueStatements = ["true", "yes", "истина", "да"];
-
+        public static readonly string[] TrueStatements = ["true", "yes"];
+        
         public static List<T> FromCSV<T>(string csv) where T : new()
         {
             var type = typeof(T);
             var items = new List<T>();
-
+            
             var enumerable = CSVParser.ReadLinesFromString(csv);
             using var enumerator = enumerable.GetEnumerator();
 
@@ -24,10 +24,10 @@ namespace Sadalmalik.CSV
 
             var header = enumerator.Current;
             var fields = new Dictionary<int, FieldInfo?>();
-            for (var i = 0; i < header.Count; i++)
+            for (int i = 0; i < header.Count; i++)
             {
                 var name = header[i];
-                if (name.StartsWith("#")) continue;
+                if (name.StartsWith('#')) continue;
                 fields.Add(i, type.GetField(name, flags));
             }
 
@@ -36,45 +36,46 @@ namespace Sadalmalik.CSV
                 var line = enumerator.Current;
 
                 var item = new T();
-                for (var k = 0; k < line.Count; k++)
+                for (int i = 0; i < line.Count; i++)
                 {
-                    if (!fields.TryGetValue(k, out var field))
+                    if (!fields.TryGetValue(i, out var field))
                         continue;
-                    if (field == null)
+                    if (field==null)
                         continue;
-
-                    var value = FromString(field.FieldType, line[k]);
-
+                    
+                    var value = FromString(field.FieldType, line[i]);
+                    
                     field.SetValue(item, value);
                 }
-
                 items.Add(item);
             }
 
             return items;
         }
 
-        public static string ToCSV<T>(List<T> items, bool addPrimaryIndex = true)
+        public static string ToCSV<T>(List<T> items, bool addPrimaryIndex=false)
         {
             return CSVParser.WriteToString(ToValues(items, addPrimaryIndex));
         }
 
-        private static IEnumerable<string?> ToValues<T>(List<T> items, bool addPrimaryIndex = true)
+        private static IEnumerable<string?> ToValues<T>(List<T> items, bool addPrimaryIndex=false)
         {
             if (addPrimaryIndex)
                 yield return "#";
             var fields = typeof(T).GetFields(flags);
             foreach (var field in fields)
                 yield return field.Name;
-
             yield return null;
 
-            int index = 0;
+            var index = 0;
             foreach (var item in items)
             {
                 if (addPrimaryIndex)
+                {
                     yield return index.ToString();
-
+                    index++;
+                }
+                
                 foreach (var field in fields)
                 {
                     var value = field.GetValue(item)!;
@@ -88,64 +89,92 @@ namespace Sadalmalik.CSV
         private static object FromString(Type type, string value)
         {
             if (type == typeof(string))
-                return value;
+                return value as string;
 
             if (type == typeof(bool))
+            {
                 return TrueStatements.Contains(value);
+            }
+                
             if (type == typeof(byte))
             {
-                if (byte.TryParse(value, out byte result))
+                if (byte.TryParse(value, out var result))
                     return result;
-                return (byte)0;
+                return (byte) 0;
+            }
+
+            if (type == typeof(sbyte))
+            {
+                if (sbyte.TryParse(value, out var result))
+                    return result;
+                return (sbyte) 0;
             }
 
             if (type == typeof(short))
             {
-                if (short.TryParse(value, out short result))
+                if (short.TryParse(value, out var result))
                     return result;
-                return (short)0;
+                return (short) 0;
             }
 
             if (type == typeof(int))
             {
-                if (int.TryParse(value, out int result))
+                if (int.TryParse(value, out var result))
                     return result;
-                return (int)0;
+                return (int) 0;
             }
 
             if (type == typeof(long))
             {
-                if (long.TryParse(value, out long result))
+                if (long.TryParse(value, out var result))
                     return result;
-                return (long)0;
+                return (long) 0;
             }
 
             if (type == typeof(float))
             {
-                if (float.TryParse(value, out float result))
+                if (float.TryParse(value, out var result))
                     return result;
-                return (float)0;
+                return (float) 0;
             }
 
             if (type == typeof(double))
             {
-                if (double.TryParse(value, out double result))
+                if (double.TryParse(value, out var result))
                     return result;
-                return (double)0;
+                return (double) 0;
             }
-
+            
             return value;
         }
 
         private static string ToString(Type type, object value)
         {
-            if (type == typeof(string))
-                return value.ToString();
-
             if (type == typeof(bool))
                 return (bool)value ? "true" : "false";
-
-            return value.ToString();
+                
+            return value.ToString() ?? "";
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
