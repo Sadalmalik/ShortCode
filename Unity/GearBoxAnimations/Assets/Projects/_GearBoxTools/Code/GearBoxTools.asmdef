@@ -1,0 +1,16 @@
+{
+    "name": "GearBoxTools",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c3dc6239f2d7edc4a8a5a6d4e4d1fcae"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
