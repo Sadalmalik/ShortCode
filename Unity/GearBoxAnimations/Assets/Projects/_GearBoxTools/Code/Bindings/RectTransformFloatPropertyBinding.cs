@@ -1,16 +1,13 @@
-﻿using Sirenix.OdinInspector;
+using System;
 using UnityEngine;
 
 namespace GearBoxTools
 {
-    public class RectTransformPropertyBinding : PropertyBinding
+    [Serializable]
+    public class RectTransformFloatPropertyBinding : PropertyBinding<float>
     {
         public RectTransform target;
-        
-        [HorizontalGroup]
         public RectTransformComponent component;
-        
-        [HorizontalGroup]
         public VectorAxis axis;
         
         public override float GetValue()

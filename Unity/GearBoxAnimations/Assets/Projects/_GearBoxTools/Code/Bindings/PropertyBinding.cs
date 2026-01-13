@@ -1,8 +1,11 @@
-﻿namespace GearBoxTools
+﻿using System;
+
+namespace GearBoxTools
 {
-    public abstract class PropertyBinding
+    [Serializable]
+    public abstract class PropertyBinding<T>
     {
-        public abstract float GetValue();
-        public abstract void SetValue(float value);
+        public abstract T GetValue();
+        public abstract void SetValue(T value);
     }
 }

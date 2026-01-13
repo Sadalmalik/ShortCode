@@ -30,7 +30,8 @@ namespace GearBoxTools
         public bool IsGearRation => GearType == GearType.GearRatio;
         public bool IsNormalizedCurve => GearType == GearType.NormalizedCurve;
 
-        public PropertyBinding outputProperty;
+        [SerializeReference]
+        public PropertyBinding<float> outputProperty;
 
         public void ApplyValue(float value)
         {
@@ -47,6 +48,7 @@ namespace GearBoxTools
                     break;
             }
 
+            if (outputProperty == null) return;
             outputProperty.SetValue(outValue);
         }
     }
@@ -54,7 +56,8 @@ namespace GearBoxTools
     [ExecuteInEditMode]
     public class GearBox : SerializedMonoBehaviour
     {
-        public PropertyBinding inputProperty;
+        [SerializeReference]
+        public PropertyBinding<float> inputProperty;
         public float Offset;
         public float Scale;
         public List<Gear> gears;
@@ -65,6 +68,7 @@ namespace GearBoxTools
         {
             if (!ExecuteInEditor) return;
 
+            if (inputProperty == null) return;
             var value = Scale * (inputProperty.GetValue() + Offset);
             foreach (var gear in gears)
             {
