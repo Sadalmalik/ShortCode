@@ -9,7 +9,12 @@ namespace GearBoxTools
     {
         [FormerlySerializedAs("Group")]
         public CanvasGroup group;
-        
+
+        public override void SetupTarget(GameObject target)
+        {
+            group = target.GetComponent<CanvasGroup>();
+        }
+
         public override float GetValue()
         {
             return group.alpha;

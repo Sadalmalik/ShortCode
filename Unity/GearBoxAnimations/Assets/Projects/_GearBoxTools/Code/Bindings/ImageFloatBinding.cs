@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace GearBoxTools
@@ -8,10 +9,15 @@ namespace GearBoxTools
     {
         public Image image;
         public ColorChannel channel;
-        
+
+        public override void SetupTarget(GameObject target)
+        {
+            image = target.GetComponent<Image>();
+        }
+
         public override float GetValue()
         {
-            return image.color[(int) channel];
+            return image.color[(int)channel];
         }
 
         public override void SetValue(float value)

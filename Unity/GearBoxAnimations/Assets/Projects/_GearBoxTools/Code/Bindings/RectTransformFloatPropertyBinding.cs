@@ -9,7 +9,12 @@ namespace GearBoxTools
         public RectTransform target;
         public RectTransformComponent component;
         public VectorAxis axis;
-        
+
+        public override void SetupTarget(GameObject target)
+        {
+            this.target = target.GetComponent<RectTransform>();
+        }
+
         public override float GetValue()
         {
             var vector = target.GetRectVector(component);

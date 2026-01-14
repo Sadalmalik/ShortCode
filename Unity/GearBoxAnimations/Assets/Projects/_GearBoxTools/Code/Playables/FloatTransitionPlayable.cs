@@ -7,6 +7,7 @@ namespace GearBoxTools
     [Serializable]
     public class FloatTransitionPlayable : PlayableAsset
     {
+        public ExposedReference<GameObject> bindingTarget;
         [SerializeReference]
         public PropertyBinding<float> binding;
         public float valueStart;
@@ -14,13 +15,17 @@ namespace GearBoxTools
         public AnimationCurve curve;
 
         public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
-            => ScriptPlayable<FloatTransitionBehaviour>.Create(graph, new FloatTransitionBehaviour
+        {
+            var target = bindingTarget.Resolve(graph.GetResolver());
+            if (target != null) binding.SetupTarget(target);
+            return ScriptPlayable<FloatTransitionBehaviour>.Create(graph, new FloatTransitionBehaviour
             {
                 binding = binding,
                 valueStart = valueStart,
                 valueEnd = valueEnd,
                 curve = curve,
             });
+        }
     }
 
     public class FloatTransitionBehaviour : PlayableBehaviour
