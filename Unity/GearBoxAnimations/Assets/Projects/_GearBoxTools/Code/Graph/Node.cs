@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace GearBoxTools
+namespace GearBoxTools.ForceGraph
 {
     public class Node : MonoBehaviour
     {
@@ -19,6 +19,12 @@ namespace GearBoxTools
 
         public void ApplyForce(float deltaTime, Vector3 force)
         {
+            if (float.IsNaN(force.x) ||
+                float.IsNaN(force.y) ||
+                float.IsNaN(force.z))
+            {
+                Debug.Log("IT STARTS HERE!!!");
+            }
             Velocity += deltaTime * force;
         }
 

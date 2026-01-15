@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace GearBoxTools
+namespace GearBoxTools.ForceGraph
 {
     public class Graph : MonoBehaviour
     {
@@ -11,11 +11,14 @@ namespace GearBoxTools
         public float noisePower;
         public List<Node> nodes;
         public List<Link> links;
+        public List<Well> wells;
+        
 
         private void Awake()
         {
-            nodes = GetComponentsInChildren<Node>().ToList();
-            links = GetComponentsInChildren<Link>().ToList();
+            nodes = GetComponentsInChildren<Node>(true).ToList();
+            links = GetComponentsInChildren<Link>(true).ToList();
+            wells = GetComponentsInChildren<Well>(true).ToList();
         }
 
         private void FixedUpdate()
@@ -27,12 +30,16 @@ namespace GearBoxTools
 
             foreach (var link in links)
             {
-                link.Tick(deltaTime);
+                if (link.IsActive)
+                    link.Tick(deltaTime);
             }
 
             foreach (var node in nodes)
             {
                 if (!node.IsActive) continue;
+                
+                foreach (var well in wells)
+                    well.Apply(deltaTime, node);
 
                 if (noisePower > 0)
                     node.ApplyForce(deltaTime, GetDirection(node.Position) * noisePower);

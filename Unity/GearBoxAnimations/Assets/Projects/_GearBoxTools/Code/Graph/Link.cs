@@ -1,15 +1,14 @@
 ﻿using System;
 using UnityEngine;
 
-namespace GearBoxTools
+namespace GearBoxTools.ForceGraph
 {
     public class Link : MonoBehaviour
     {
         public Node NodeA;
         public Node NodeB;
 
-        [Range(0.1f, 50f)]
-        public float Length;
+        public float Length = 1;
 
         public float SpringForce;
         public float SpringDamping;
