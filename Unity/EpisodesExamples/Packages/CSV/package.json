@@ -1,0 +1,24 @@
+{
+  "name": "githum.sadalmalik.simple-csv",
+  "version": "1.0.0",
+  "displayName": "Simple CSV",
+  "description": "This is siple CSV parser",
+  "unity": "2019.1",
+  "changelogUrl": "https://example.com/changelog.html",
+  "licensesUrl": "https://raw.githubusercontent.com/Sadalmalik/ShortCode/refs/heads/main/LICENSE",
+  "keywords": [
+    "csv"
+  ],
+  "author": {
+    "name": "Gleb Kuzmin a.k.a. Kaleb Sadalmalik",
+    "email": "neurothrop@gmail.com",
+    "url": "https://github.com/Sadalmalik"
+  },
+  "samples": [
+    {
+      "displayName": "Heroes Sample",
+      "description": "This sample demonstrates simple usage of CSV parser.",
+      "path": "Samples/Heroes"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55559e9e92db33c46bfe18aad6517ec7, type: 3}
+  m_Name: ExampleHeroesList
+  m_EditorClassIdentifier: 
+  SourceURL: https://docs.google.com/spreadsheets/d/e/2PACX-1vR79p8WJLvL-29paJ_rzm1RXP99q4n4xlTrBJ-UE_KFJ5A_w8pTRFXZjBEPL6QO5EwE_CeuNyJLKxer/pub?gid=1419529400&single=true&output=csv
+  Characters:
+  - id: 1
+    name: Captain Sidequest
+    description: 'Constantly abandons the main mission to help with trivial problems
+      like lost cats or broken vending machines.
+
+
+      a.k.a. "Baron Optional Objective"'
+    power: 3
+  - id: 2
+    name: The Incredible Mildman
+    description: Has slightly above-average strength, stamina, and confidence, but
+      only on Tuesdays.
+    power: 4
+  - id: 3
+    name: Doctor Delay
+    description: Can stop time for everyone except himself, yet always uses it to
+      procrastinate.
+    power: 7
+  - id: 4
+    name: Lady Loophole
+    description: Her powers activate only through overly specific technicalities
+      in villain contracts or ancient prophecies.
+    power: 6
+  - id: 5
+    name: Professor Squeak
+    description: Communicates fluently with mice, who are surprisingly unionized
+      and hard to negotiate with.
+    power: 5
+  - id: 6
+    name: The Human Pop-Up Ad
+    description: 'Appears at the worst possible moment to promote something irrelevant,
+      distracting heroes and villains alike.
+
+
+      a.k.a. "The Unskippable Hero"'
+    power: 2
+  - id: 7
+    name: Sir Overreacts-a-Lot
+    description: Turns minor inconveniences into city-wide emergencies through sheer
+      dramatic flair.
+    power: 6
+  - id: 8
+    name: Madam Stopwatch
+    description: Can perfectly predict how long anything will take, but no one ever
+      believes her.
+    power: 4
+  - id: 9
+    name: Thunder Nap
+    description: Gains godlike power after sleeping for exactly 14 hours, then immediately
+      needs another nap.
+    power: 8
+  - id: 10
+    name: The Beige Shadow
+    description: 'Masters the art of being so boring and unremarkable that enemies
+      completely forget he exists.
+
+
+      a.k.a. "Agent Background Noise"'
+    power: 9

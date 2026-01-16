@@ -1,0 +1,16 @@
+{
+    "name": "SimpleCSV.Sample.Heroes",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1f0b8f5223aa01a489cd81fd5e3eace0"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

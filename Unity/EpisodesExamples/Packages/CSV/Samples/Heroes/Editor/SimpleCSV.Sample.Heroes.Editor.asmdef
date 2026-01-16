@@ -1,0 +1,18 @@
+{
+    "name": "SimpleCSV.Sample.Heroes.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:314743e91107b9542b7760e3a1f71de8"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
