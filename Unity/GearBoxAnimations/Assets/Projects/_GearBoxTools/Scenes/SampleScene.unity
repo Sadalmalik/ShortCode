@@ -3727,7 +3727,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332401285}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.19509034, z: -0, w: 0.9807853}
+  m_LocalRotation: {x: 0, y: -0.19509034, z: 0, w: 0.9807853}
   m_LocalPosition: {x: 1.95, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3752,7 +3752,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1332401286}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -3784,7 +3785,19 @@ MonoBehaviour:
       Entry: 4
       Data: 0
     - Name: outputProperty
-      Entry: 6
+      Entry: 7
+      Data: 2|GearBoxTools.TransformFloatPropertyBinding, GearBoxTools
+    - Name: target
+      Entry: 10
+      Data: 0
+    - Name: component
+      Entry: 3
+      Data: 4
+    - Name: axis
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
       Data: 
     - Name: 
       Entry: 8
@@ -3796,15 +3809,19 @@ MonoBehaviour:
       Entry: 8
       Data: 
   inputProperty:
-    rid: -2
+    rid: 8889550783273238594
   Offset: 11.25
   Scale: 1
   ExecuteInEditor: 1
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 8889550783273238594
+      type: {class: TransformFloatPropertyBinding, ns: GearBoxTools, asm: GearBoxTools}
+      data:
+        target: {fileID: 1078470714}
+        component: 4
+        axis: 1
 --- !u!1 &1395955582
 GameObject:
   m_ObjectHideFlags: 0
@@ -4984,8 +5001,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774347842}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.00000008742278, z: -0, w: -1}
-  m_LocalPosition: {x: 2.847, y: 0.5, z: 0.889}
+  m_LocalRotation: {x: 0.00000008742278, y: 0.00000008742278, z: 7.642742e-15, w: -1}
+  m_LocalPosition: {x: 2.834, y: 0.5, z: 0.889}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5009,7 +5026,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1774347843}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -5041,7 +5059,19 @@ MonoBehaviour:
       Entry: 4
       Data: 0
     - Name: outputProperty
-      Entry: 6
+      Entry: 7
+      Data: 2|GearBoxTools.TransformFloatPropertyBinding, GearBoxTools
+    - Name: target
+      Entry: 10
+      Data: 0
+    - Name: component
+      Entry: 3
+      Data: 4
+    - Name: axis
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
       Data: 
     - Name: 
       Entry: 8
@@ -5053,15 +5083,19 @@ MonoBehaviour:
       Entry: 8
       Data: 
   inputProperty:
-    rid: -2
+    rid: 8889550783273238595
   Offset: 22.5
   Scale: 1
   ExecuteInEditor: 1
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 8889550783273238595
+      type: {class: TransformFloatPropertyBinding, ns: GearBoxTools, asm: GearBoxTools}
+      data:
+        target: {fileID: 1332401286}
+        component: 4
+        axis: 1
 --- !u!1 &1812944290
 GameObject:
   m_ObjectHideFlags: 0
