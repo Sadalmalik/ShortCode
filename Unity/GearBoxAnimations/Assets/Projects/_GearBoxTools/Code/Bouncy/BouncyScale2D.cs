@@ -33,6 +33,8 @@ namespace GearBoxTools
 
         private void Awake()
         {
+            if (ControllableRect == null)
+                ControllableRect = transform as RectTransform;
             SetBump(TickBumpOnStart);
             targetPosition = ControllableRect.anchoredPosition;
             targetScale = ControllableRect.localScale;
