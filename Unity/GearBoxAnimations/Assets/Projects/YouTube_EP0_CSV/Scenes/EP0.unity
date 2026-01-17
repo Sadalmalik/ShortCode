@@ -1084,6 +1084,31 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 688690363690755924, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
+    - target: {fileID: 688690363690755924, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 688690363690755924, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[0]'
+      value: '"path":"gears.[0].Curve","value":{"$id":0,"$type":"UnityEngine.AnimationCurve,
+        UnityEngine.CoreModule",{"$id":1,"$type":"UnityEngine.Keyframe[], UnityEngine.CoreModule","$rlength":4,"$rcontent":[{"$type":"UnityEngine.Keyframe,
+        UnityEngine.CoreModule","ver":1,"m_Time":0,"m_Value":0,"m_InTangent":0,"m_OutTangent":0,"m_TangentMode":0,"m_WeightedMode":0,"m_InWeight":0,"m_OutWeight":0},{"$type":"UnityEngine.Keyframe,
+        UnityEngine.CoreModule","ver":1,"m_Time":0.6,"m_Value":1,"m_InTangent":0,"m_OutTangent":0,"m_TangentMode":0,"m_WeightedMode":0,"m_InWeight":0.333333343,"m_OutWeight":0.333333343},{"$type":"UnityEngine.Keyframe,
+        UnityEngine.CoreModule","ver":1,"m_Time":0.9550207,"m_Value":0.00107979961,"m_InTangent":2.54001284,"m_OutTangent":2.54001284,"m_TangentMode":0,"m_WeightedMode":0,"m_InWeight":0.333333343,"m_OutWeight":0.2606642},{"$type":"UnityEngine.Keyframe,
+        UnityEngine.CoreModule","ver":1,"m_Time":1,"m_Value":0,"m_InTangent":0,"m_OutTangent":0,"m_TangentMode":0,"m_WeightedMode":0,"m_InWeight":0,"m_OutWeight":0}]},8,8}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 688690363690755924, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[1]'
+      value: '"path":"gears.[1].outputProperty.group","value":$eref:0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 688690363690755924, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 688690363690755924, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
+      propertyPath: 'serializationData.PrefabModificationsReferencedUnityObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 437257986}
     - target: {fileID: 1424849851243147852, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
       propertyPath: m_Name
       value: CSVBlock-B-2
@@ -1213,6 +1238,11 @@ GameObject:
 --- !u!224 &437257985 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1544942059531304235, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
+  m_PrefabInstance: {fileID: 437257982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &437257986 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 5571013290626052833, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
   m_PrefabInstance: {fileID: 437257982}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &458227000
@@ -3222,7 +3252,33 @@ PlayableDirector:
   - key: {fileID: 8734456107146211666, guid: 36c8dcf2b09267f468e547ef9bbc4f8d, type: 2}
     value: {fileID: 153150179}
   - key: {fileID: 5509150327267938056, guid: 36c8dcf2b09267f468e547ef9bbc4f8d, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1629795047}
+  - key: {fileID: -2451925739396776525, guid: 36c8dcf2b09267f468e547ef9bbc4f8d, type: 2}
+    value: {fileID: 2036592376}
+  - key: {fileID: 2739719144462095479, guid: 36c8dcf2b09267f468e547ef9bbc4f8d, type: 2}
+    value: {fileID: 854846978}
+  - key: {fileID: 5049791580754828754, guid: 36c8dcf2b09267f468e547ef9bbc4f8d, type: 2}
+    value: {fileID: 942476441}
+  - key: {fileID: 787811159927417083, guid: 36c8dcf2b09267f468e547ef9bbc4f8d, type: 2}
+    value: {fileID: 1600112219}
+  - key: {fileID: 425019175870901224, guid: 36c8dcf2b09267f468e547ef9bbc4f8d, type: 2}
+    value: {fileID: 1215329655}
+  - key: {fileID: 8829995153235668323, guid: 36c8dcf2b09267f468e547ef9bbc4f8d, type: 2}
+    value: {fileID: 1134111141}
+  - key: {fileID: 5382574150868734578, guid: 36c8dcf2b09267f468e547ef9bbc4f8d, type: 2}
+    value: {fileID: 1629795047}
+  - key: {fileID: -7019899430875831115, guid: 36c8dcf2b09267f468e547ef9bbc4f8d, type: 2}
+    value: {fileID: 2036592376}
+  - key: {fileID: -4578194800620570772, guid: 36c8dcf2b09267f468e547ef9bbc4f8d, type: 2}
+    value: {fileID: 1600112219}
+  - key: {fileID: 4885483281765695805, guid: 36c8dcf2b09267f468e547ef9bbc4f8d, type: 2}
+    value: {fileID: 854846978}
+  - key: {fileID: 8875391328242256051, guid: 36c8dcf2b09267f468e547ef9bbc4f8d, type: 2}
+    value: {fileID: 942476441}
+  - key: {fileID: -6106955980262967926, guid: 36c8dcf2b09267f468e547ef9bbc4f8d, type: 2}
+    value: {fileID: 1215329655}
+  - key: {fileID: -6900745208015233545, guid: 36c8dcf2b09267f468e547ef9bbc4f8d, type: 2}
+    value: {fileID: 1134111141}
   m_ExposedReferences:
     m_References:
     - d68b43971b1453d4ab41a717a4b1ce16: {fileID: 1421886639}
@@ -4367,6 +4423,31 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 688690363690755924, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
+    - target: {fileID: 688690363690755924, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 688690363690755924, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[0]'
+      value: '"path":"gears.[0].Curve","value":{"$id":0,"$type":"UnityEngine.AnimationCurve,
+        UnityEngine.CoreModule",{"$id":1,"$type":"UnityEngine.Keyframe[], UnityEngine.CoreModule","$rlength":4,"$rcontent":[{"$type":"UnityEngine.Keyframe,
+        UnityEngine.CoreModule","ver":1,"m_Time":0,"m_Value":0,"m_InTangent":0,"m_OutTangent":0,"m_TangentMode":0,"m_WeightedMode":0,"m_InWeight":0,"m_OutWeight":0},{"$type":"UnityEngine.Keyframe,
+        UnityEngine.CoreModule","ver":1,"m_Time":0.6,"m_Value":1,"m_InTangent":0,"m_OutTangent":0,"m_TangentMode":0,"m_WeightedMode":0,"m_InWeight":0.333333343,"m_OutWeight":0.333333343},{"$type":"UnityEngine.Keyframe,
+        UnityEngine.CoreModule","ver":1,"m_Time":0.9550207,"m_Value":0.00107979961,"m_InTangent":2.54001284,"m_OutTangent":2.54001284,"m_TangentMode":0,"m_WeightedMode":0,"m_InWeight":0.333333343,"m_OutWeight":0.2606642},{"$type":"UnityEngine.Keyframe,
+        UnityEngine.CoreModule","ver":1,"m_Time":1,"m_Value":0,"m_InTangent":0,"m_OutTangent":0,"m_TangentMode":0,"m_WeightedMode":0,"m_InWeight":0,"m_OutWeight":0}]},8,8}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 688690363690755924, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[1]'
+      value: '"path":"gears.[1].outputProperty.group","value":$eref:0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 688690363690755924, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 688690363690755924, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
+      propertyPath: 'serializationData.PrefabModificationsReferencedUnityObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1176713943}
     - target: {fileID: 1424849851243147852, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
       propertyPath: m_Name
       value: CSVBlock-B-3
@@ -4476,6 +4557,11 @@ RectTransform:
 --- !u!1 &1176713942 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1424849851243147852, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
+  m_PrefabInstance: {fileID: 1176713940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1176713943 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 5571013290626052833, guid: 112f51dea1d344c4e91e2d20a64f370f, type: 3}
   m_PrefabInstance: {fileID: 1176713940}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1181065342
