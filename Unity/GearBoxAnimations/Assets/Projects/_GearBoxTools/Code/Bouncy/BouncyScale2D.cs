@@ -89,6 +89,8 @@ namespace GearBoxTools
             xScaleSpring.velocity = velocity.x;
             yScaleSpring.velocity = velocity.y;
             targetScale = target;
+            
+            ControllableRect.localScale = new Vector3(xScaleSpring.value, yScaleSpring.value);
         }
     }
 }

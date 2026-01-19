@@ -537,6 +537,75 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: FloatTransitionPlayable
+  - m_Version: 1
+    m_Start: 95
+    m_ClipIn: 0
+    m_Asset: {fileID: 1846245677449412425}
+    m_Duration: 2
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -8119787672806423391}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: FloatTransitionPlayable
   m_Markers:
     m_Objects: []
 --- !u!114 &-8118165982873241154
@@ -551,7 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 14.000000000000002
+  m_Time: 19.999999999999993
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: ff48a5456d283fa469ad30a31e3c3cdf, type: 2}
@@ -959,7 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 10.000000000000002
+  m_Time: 12
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: f7acacb234983d1409b21b7fcf661243, type: 2}
@@ -1644,7 +1713,7 @@ MonoBehaviour:
     defaultValue: {fileID: 0}
   binding:
     rid: 8889550757582864449
-  value: {x: -220, y: -85}
+  value: {x: -190, y: 60}
   references:
     version: 2
     RefIds:
@@ -1748,7 +1817,7 @@ MonoBehaviour:
     m_Start: 46
     m_ClipIn: 0
     m_Asset: {fileID: 7559101630346741022}
-    m_Duration: 50
+    m_Duration: 52
     m_TimeScale: 1
     m_ParentTrack: {fileID: -5606978198946784649}
     m_EaseInDuration: 0
@@ -2173,7 +2242,7 @@ MonoBehaviour:
     m_Start: 44
     m_ClipIn: 0
     m_Asset: {fileID: -3796550016007777035}
-    m_Duration: 52
+    m_Duration: 54
     m_TimeScale: 1
     m_ParentTrack: {fileID: -5084366269598508295}
     m_EaseInDuration: 0
@@ -2278,7 +2347,7 @@ MonoBehaviour:
   m_Name: RecorderClip
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 3
+  take: 6
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
@@ -2524,7 +2593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter(Clone)
   m_EditorClassIdentifier: 
-  m_Time: 12.000000000000002
+  m_Time: 16
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: f7acacb234983d1409b21b7fcf661243, type: 2}
@@ -3258,7 +3327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter(Clone)(Clone)
   m_EditorClassIdentifier: 
-  m_Time: 14.000000000000005
+  m_Time: 20
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: f7acacb234983d1409b21b7fcf661243, type: 2}
@@ -3598,7 +3667,7 @@ MonoBehaviour:
   - {fileID: -293189805826195969}
   - {fileID: 4960922965802136746}
   - {fileID: 109719735806661715}
-  m_FixedDuration: 96
+  m_FixedDuration: 98
   m_EditorSettings:
     m_Framerate: 60
     m_ScenePreview: 1
@@ -3946,7 +4015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 12.000000000000002
+  m_Time: 16
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: ff48a5456d283fa469ad30a31e3c3cdf, type: 2}
@@ -4200,6 +4269,57 @@ MonoBehaviour:
     m_DisplayName: FloatTransitionPlayable
   m_Markers:
     m_Objects: []
+--- !u!114 &1846245677449412425
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905ee9ee5b2049a49cd922f86ce40c34, type: 3}
+  m_Name: FloatTransitionPlayable(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  bindingTarget:
+    exposedName: 57785c223d930da42bf3429e8f002db4
+    defaultValue: {fileID: 0}
+  binding:
+    rid: 8889550745639845951
+  valueStart: 0
+  valueEnd: 1
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  references:
+    version: 2
+    RefIds:
+    - rid: 8889550745639845951
+      type: {class: ImageFloatBinding, ns: GearBoxTools, asm: GearBoxTools}
+      data:
+        image: {fileID: 0}
+        channel: 3
 --- !u!114 &2014811157513744874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4451,7 +4571,7 @@ MonoBehaviour:
   m_Version: 3
   m_AnimClip: {fileID: 0}
   m_Locked: 0
-  m_Muted: 1
+  m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
@@ -4461,7 +4581,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 3671595537027069336}
-    m_Duration: 96
+    m_Duration: 98
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3147383480554777278}
     m_EaseInDuration: 0
@@ -4633,7 +4753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 10.000000000000002
+  m_Time: 12.000000000000002
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: ff48a5456d283fa469ad30a31e3c3cdf, type: 2}
