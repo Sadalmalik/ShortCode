@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace GearBoxTools.ForceGraph
 {
@@ -8,12 +10,14 @@ namespace GearBoxTools.ForceGraph
     {
         public bool active;
         public float repulsionPower;
-        public float noisePower;
+        public float noisePower = 0.00f;
+        public float noiseSpeed = 0.01f;
+        public float noiseScale = 10f;
         public List<Node> nodes;
         public List<Link> links;
         public List<Well> wells;
+        public List<Transform> traces;
         
-
         private void Awake()
         {
             nodes = GetComponentsInChildren<Node>(true).ToList();
@@ -46,6 +50,11 @@ namespace GearBoxTools.ForceGraph
                 
                 node.Tick(deltaTime);
             }
+
+            foreach (var trace in traces)
+            {
+                trace.position += GetDirection(trace.position) * noisePower;
+            }
         }
 
         private void CalculateRepulsion(float deltaTime)
@@ -68,24 +77,26 @@ namespace GearBoxTools.ForceGraph
             }
         }
 
-        public static Vector3 GetDirection(Vector3 pos)
+        public Vector3 GetDirection(Vector3 pos)
         {
-            var dx = PerlinNoise3D(pos.x+0.1f, pos.y, pos.z) - PerlinNoise3D(pos.x-0.1f, pos.y, pos.z);
-            var dy = PerlinNoise3D(pos.x, pos.y+0.1f, pos.z) - PerlinNoise3D(pos.x, pos.y-0.1f, pos.z);
-            var dz = PerlinNoise3D(pos.x, pos.y, pos.z+0.1f) - PerlinNoise3D(pos.x, pos.y, pos.z-0.1f);
+            pos /= noiseScale;
+            var t = Time.time * noiseSpeed;
+            var dx = PerlinNoise3D(t, pos.x+0.1f, pos.y, pos.z) - PerlinNoise3D(t, pos.x-0.1f, pos.y, pos.z);
+            var dy = PerlinNoise3D(t, pos.x, pos.y+0.1f, pos.z) - PerlinNoise3D(t, pos.x, pos.y-0.1f, pos.z);
+            var dz = PerlinNoise3D(t, pos.x, pos.y, pos.z+0.1f) - PerlinNoise3D(t, pos.x, pos.y, pos.z-0.1f);
             return new Vector3(dx, dy, dz) * 5;
         }
         
-        public static float PerlinNoise3D(float x, float y, float z)
+        public static float PerlinNoise3D(float t, float x, float y, float z)
         {
             y += 1;
             z += 2;
-            float xy = _perlin3DFixed(x, y);
-            float xz = _perlin3DFixed(x, z);
-            float yz = _perlin3DFixed(y, z);
-            float yx = _perlin3DFixed(y, x);
-            float zx = _perlin3DFixed(z, x);
-            float zy = _perlin3DFixed(z, y);
+            float xy = Mathf.PerlinNoise(x, y * t); // _perlin3DFixed(x, y);
+            float xz = Mathf.PerlinNoise(x, z * t);
+            float yz = Mathf.PerlinNoise(y, z * t);
+            float yx = Mathf.PerlinNoise(y, x * t);
+            float zx = Mathf.PerlinNoise(z, x * t);
+            float zy = Mathf.PerlinNoise(z, y * t);
 
             return xy * xz * yz * yx * zx * zy;
         }
